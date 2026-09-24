@@ -1,8 +1,9 @@
 # Hi there, I'm 孙浩翔 👋
 
-> **M.S. in Mechanical Engineering @ 浙江大学 | B.S. in Physics** > 🤖 **Focus:** Embodied AI, Sim-to-Real, Robot Learning & Motion Planning.
+> **M.S. in Mechanical Engineering @ 浙江大学 | B.S. in Physics**<br>
+> 🤖 **Focus:** VLA · Language-Action Alignment · Robot Learning · Sim-to-Real
 
-欢迎来到我的机器人项目集。这里汇集了我对 **具身智能（Embodied AI）** 和 **经典机器人控制** 的探索。我致力于结合**物理学的第一性原理**直觉与**深度强化学习**的范式，解决机器人从仿真到现实（Sim2Real）的落地难题。
+欢迎来到我的机器人项目集。目前重点探索语言指令与机器人动作的对齐、自动生成操作数据，以及双臂机器人从仿真到真机的迁移。
 
 ---
 
@@ -12,14 +13,11 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch)
 ![ROS2](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros)
 ![MuJoCo](https://img.shields.io/badge/Simulator-MuJoCo-orange)
-![Isaac Gym](https://img.shields.io/badge/Simulator-Isaac%20Gym-green)
+![Isaac Lab](https://img.shields.io/badge/Simulator-Isaac%20Lab-green)
+![LeRobot](https://img.shields.io/badge/Robot%20Learning-LeRobot-yellow)
+![cuRobo](https://img.shields.io/badge/Motion%20Planning-cuRobo-6A5ACD)
 
 ---
-
-
-
-
-
 
 ## Theoretical Algorithms | 理论验证
 > *关注经典算法的数学原理复现与特定场景下的优化。*
@@ -30,14 +28,12 @@
 > **项目概述**:  
 > 基于 ROS 的移动机器人导航系统。在经典 A* 搜索的基础上，结合物理约束（动力学）进行了后端轨迹优化，实现了在复杂障碍物环境下的平滑避障。
 
-[[这里放你的 A.mp4 或者转成的 GIF]](https://github.com/user-attachments/assets/9e20aeb9-ac9a-467e-a40d-be3237b12ef5)
+[观看 A* 路径规划演示](https://github.com/user-attachments/assets/9e20aeb9-ac9a-467e-a40d-be3237b12ef5)
 
 **✨ 核心功能 (Key Features):**
 * **🎯 前端搜索**: 实现 **A*** 算法，并通过启发式函数优化（Heuristic Optimization）提升在随机障碍物环境下的搜索效率。
 * **🌊 后端平滑**: 采用 **5次多项式 (Quintic Polynomial)** 进行轨迹插值，解析求解 **Minimum Jerk**（最小加加速度）轨迹，确保速度与加速度连续。
 * **📊 可视化交互**: 集成 RViz 实时可视化，动态展示搜索过程（Open/Closed Set）与优化后的平滑轨迹。
-
-
 
 ---
 
@@ -47,12 +43,7 @@
 > **项目概述**:  
 > 针对工业场景下的 PCB 缺陷检测，对比实现了两套 **Faster R-CNN** 方案：基于 torchvision 的工程化实现与基于底层网络构建的完整复现。项目集成 MLOps 工具流与桌面端部署应用。
 
-
-
-
-https://github.com/user-attachments/assets/886da69d-a7b3-4c36-8a89-d5e3f94cbe37
-
-
+[观看 PCB 缺陷检测演示](https://github.com/user-attachments/assets/886da69d-a7b3-4c36-8a89-d5e3f94cbe37)
 
 **✨ 核心功能 (Key Features):**
 * **🔍 双重架构对比**: 
@@ -61,51 +52,31 @@ https://github.com/user-attachments/assets/886da69d-a7b3-4c36-8a89-d5e3f94cbe37
 * **⚙️ 完整工程流**: 实现 VOC 格式数据流水线，支持 Mosaic/Mixup 等数据增强策略。
 * **🖥️ 部署与交互**: 开发 **Tkinter/PyQt5** 双版本 GUI，支持单图推理与视频流实时检测，实现工业级交互体验。
 
-
-
----
-## 🚀 Featured Projects | 精选项目
-
-
-
-## 🤖 Embodied AI Practice | 具身智能工程实践
-> 基于**双臂机械臂XLerobot**开发 *聚焦 SOTA 具身策略（ACT, Diffusion Policy）的复现与 Sim2Real 落地。*
-![Gemini_Generated_Image_hu7sgghu7sgghu7s](https://github.com/user-attachments/assets/984528c9-04f1-45da-83f6-b2863b16670e)
-#### 1. LeRobot Implementation: ACT 与 Diffusion Policy 的实机部署
-**关键词**: `Imitation Learning` `ACT` `Diffusion Policy` `HuggingFace LeRobot` `Sim2Real`
-
-> **项目概述**:  
-> 基于 HuggingFace **LeRobot** 框架，在双臂机器人平台上复现并部署了 **ACT (Action Chunking Transformer)** 与 **Diffusion Policy** 算法。打通了从数据采集、策略训练到真机推理的全栈流程。
-
-[[这里放真机抓取的 GIF/视频]](https://github.com/user-attachments/assets/beb5fbb2-7e38-44a0-831d-e9566df54222)
-
-**✨ 核心工作 (Key Contributions):**
-* **策略复现**: 深入研究 Transformer 动作分块预测与去噪扩散过程，成功在低数据量下训练出高鲁棒性策略。
-* **VLA 对齐**: 处理多模态数据输入（RGB 图像 + 关节状态），实现视觉特征与动作空间的对齐编码。
-* **真机适配**: 解决推理延迟与控制频率同步问题，成功完成双臂协同物体操作任务。
-
-
-
 ---
 
-#### 2. Isaac Sim Teleoperation: 高保真仿真与遥操作数据管线
-**关键词**: `NVIDIA Isaac Sim` `Teleoperation` `Data Collection` `Digital Twin` `USD`
+## 🚀 Featured Project | 精选项目
 
-> **项目概述**:  
-> 构建基于 **NVIDIA Isaac Sim** 的高保真仿真环境，用于具身智能策略的低成本训练与验证。搭建了基于 VR/手柄 的遥操作（Teleoperation）数据采集管线，为 LeRobot 提供高质量合成数据。
+### VLA Language-Action 对齐与自动数据闭环
 
-[[这里放 Isaac Sim 里的仿真录屏 GIF]](https://github.com/user-attachments/assets/04f9cae8-80fa-438e-a01e-f52a30c4c278)
+**项目开发者 | 2026.01 至今**<br>
+`XLeRobot` `Isaac Lab` `Isaac Sim` `cuRobo` `Robot API` `LLM Agent` `LeRobot`
 
-**✨ 核心工作 (Key Contributions):**
-* **数字孪生构建**: 导入机器人的 URDF/MJCF 模型，配置物理属性（碰撞体、关节阻尼）以对齐真实物理世界。
-* **遥操作映射**: 实现 VR 手柄/SpaceMouse 到机械臂末端执行器（End-effector）的 IK 逆运动学映射，实现流畅的示教数据录制。
-* **Sim-to-Sim 验证**: 在仿真环境中直接验证 LeRobot 训练出的策略模型，大幅降低真机试错成本。
+围绕双臂操作中的语言语义与动作耦合问题，构建从**自然语言任务、可执行技能 API 到连续运动轨迹**的对齐流程，并让 Agent 根据执行反馈自动生成和修正训练数据。
 
+#### Language-Action 对齐与真机迁移
 
+- 将自然语言任务拆解为 `grasp`、`pinch`、`push`、`support`、`rotate`、`handover` 等可调用操作，再映射到轨迹规划与底层机器人动作，采集细粒度的语言—动作对应数据。
+- 基于 XLeRobot / Isaac Lab 搭建双臂训练与验证环境，完成仿真策略向真实人形机器人双臂平台的迁移与验证。
 
----
+#### Agent 驱动的自动数据生成
 
-<div align="center">
-  <p>Looking for <b>Embodied AI Algorithm Intern</b> opportunities.</p>
-  <p>📫 Contact: <a href="mailto:your_email@example.com">your_email@example.com</a></p>
-</div>
+- 集成 Isaac Lab、cuRobo、Robot API 与 LLM Agent。Agent 结合视觉语言模型对物体和操作的语义判断，选择技能并生成控制代码；cuRobo 在碰撞约束下规划轨迹，再通过统一 API 执行。
+- 记录任务日志、关键帧与失败轨迹；Memory System 汇总执行经验，供 Agent 分析失败原因、修改代码并重新规划。成功轨迹写入 LeRobot 格式数据集，形成可迭代的数据生产流程。
+
+**系统流程**
+
+<img src="assets/agent-data-closure-workflow.png" alt="从任务理解、代码生成和运动规划，到执行反馈、记忆与数据集写入的系统流程" width="760">
+
+**Isaac Sim 双臂操作 Demo**
+
+![XLeRobot 在 Isaac Sim 中执行双臂物体操作的演示](assets/xlerobot-isaac-sim-demo.gif)
