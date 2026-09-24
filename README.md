@@ -77,6 +77,15 @@
 
 <img src="assets/agent-data-closure-workflow.png" alt="从任务理解、代码生成和运动规划，到执行反馈、记忆与数据集写入的系统流程" width="760">
 
-**Isaac Sim 双臂操作 Demo**
+**XLeRobot 仿真操作 Demo**
 
-![XLeRobot 在 Isaac Sim 中执行双臂物体操作的演示](assets/xlerobot-isaac-sim-demo.gif)
+<table>
+  <tr>
+    <td align="center"><b>1. 方块操作</b><br><img src="assets/xlerobot-cube-demo.gif" alt="XLeRobot 操作黄色方块的仿真演示" width="400"></td>
+    <td align="center"><b>2. 碗具操作</b><br><img src="assets/xlerobot-bowls-demo.gif" alt="XLeRobot 操作两个碗的仿真演示" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>3. 圆柱物体操作</b><br><img src="assets/xlerobot-cylinder-demo.gif" alt="XLeRobot 操作橙色圆柱物体的仿真演示" width="400"></td>
+    <td align="center"><b>4. 瓶状物体操作</b><br><img src="assets/xlerobot-isaac-sim-demo.gif" alt="XLeRobot 操作红色瓶状物体的仿真演示" width="400"></td>
+  </tr>
+</table>
